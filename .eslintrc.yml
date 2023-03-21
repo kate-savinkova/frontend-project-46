@@ -1,5 +1,6 @@
 plugins:
   - jest
+  - prettier
 
 env:
   node: true
@@ -7,12 +8,14 @@ env:
 extends:
   - 'airbnb-base'
   - 'plugin:jest/recommended'
+  - 'prettier'
 
 parserOptions:
   ecmaVersion: latest
 
 rules:
   no-console: 0
+  prettier/prettier: "error"
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
