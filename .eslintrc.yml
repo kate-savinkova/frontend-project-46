@@ -6,7 +6,6 @@ env:
   node: true
 
 extends:
-  - "airbnb-base"
   - "eslint-config-airbnb"
   - "plugin:jest/recommended"
   - "prettier"
