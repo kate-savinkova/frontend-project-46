@@ -36,9 +36,9 @@ const innerFunc = (obj1, obj2, deep) => {
       }
     } else if (typeof obj2[key] === "object") {
       const inner = innerFunc(obj2[key], {}, deep + 1);
-      res.push(`${replace.repeat(deep + 1)}- ${key}:\n${inner}`);
+      res.push(`${replace.repeat(deep + 1)}+ ${key}:\n${inner}`);
     } else {
-      res.push(`${replace.repeat(deep + 1)}- ${key}: ${obj2[key]}`);
+      res.push(`${replace.repeat(deep + 1)}+ ${key}: ${obj2[key]}`);
     }
   });
 
