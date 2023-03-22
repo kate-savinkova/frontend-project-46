@@ -7,7 +7,7 @@ env:
 
 extends:
   - "airbnb-base"
-  - "eslint-config-airbnb-base"
+  #- "eslint-config-airbnb-base"
   - "plugin:jest/recommended"
   - "prettier"
 
