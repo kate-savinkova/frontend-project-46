@@ -6,9 +6,10 @@ env:
   node: true
 
 extends:
-  - 'airbnb-base'
-  - 'plugin:jest/recommended'
-  - 'prettier'
+  - "airbnb-base"
+  - "eslint-config-airbnb"
+  - "plugin:jest/recommended"
+  - "prettier"
 
 parserOptions:
   ecmaVersion: latest
