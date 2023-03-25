@@ -1,10 +1,10 @@
 import { getFixturePath } from "../src/index.js";
-import * as genDiff from "../src/parsers.js";
+import genDiff from "../src/parsers.js";
 
-const file1 = getFixturePath("../__fixtures__/file1.json");
-const file2 = getFixturePath("../__fixtures__/file2.json");
-const f1 = getFixturePath("../__fixtures__/f1.yml");
-const f2 = getFixturePath("../__fixtures__/f2.yml");
+const file1 = "file1.json";
+const file2 = "file2.json";
+const f1 = "f1.yml";
+const f2 = "f2.yml";
 const res = `{
   - follow: false
     host: hexlet.io
