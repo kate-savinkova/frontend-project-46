@@ -15,9 +15,6 @@ parserOptions:
 
 rules:
   no-console: 0
-  prettier/prettier: 0
-  indent:
-    - tab
   import/extensions:
     - error
     - ignorePackages
