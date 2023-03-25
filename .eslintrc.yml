@@ -15,8 +15,10 @@ parserOptions:
 
 rules:
   no-console: 0
-  prettier/prettier: "error"
-  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
+  prettier/prettier: 0
+  indent:
+    - tab
+  import/extensions:
     - error
     - ignorePackages
     - js: always

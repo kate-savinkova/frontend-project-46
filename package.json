@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/kate-savinkova/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/kate-savinkova/frontend-project-46/actions)",
-  "main": "index.js",
+  "main": "parsers.js",
   "type": "module",
   "transform": {},
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/kate-savinkova/frontend-project-46#readme",
   "dependencies": {
     "commander": "^10.0.0",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

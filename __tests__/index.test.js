@@ -1,14 +1,10 @@
-// import { test, expect } from "@jest/globals";
-import { fileURLToPath } from "url";
-import path from "path";
-import genDiff from "../src/index.js";
+import { getFixturePath } from "../src/index.js";
+import * as genDiff from "../src/parsers.js";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const getFixturePath = (filename) =>
-  path.join(__dirname, "..", "__fixtures__", filename);
-
-const file1 = getFixturePath("file1.json");
-const file2 = getFixturePath("file2.json");
+const file1 = getFixturePath("../__fixtures__/file1.json");
+const file2 = getFixturePath("../__fixtures__/file2.json");
+const f1 = getFixturePath("../__fixtures__/f1.yml");
+const f2 = getFixturePath("../__fixtures__/f2.yml");
 const res = `{
   - follow: false
     host: hexlet.io
@@ -18,6 +14,10 @@ const res = `{
   + verbose: true
 }`;
 
-test("half", () => {
+test("json files", () => {
   expect(genDiff(file1, file2)).toEqual(res);
+});
+
+test("yml files", () => {
+  expect(genDiff(f1, f2)).toEqual(res);
 });

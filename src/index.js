@@ -2,6 +2,7 @@ import { readFileSync } from "fs";
 import _ from "lodash";
 import { fileURLToPath } from "url";
 import path from "path";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import yaml from "js-yaml";
 
 const convertFile = (file) => {
