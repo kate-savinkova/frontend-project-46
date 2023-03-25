@@ -1,4 +1,3 @@
-import { getFixturePath } from "../src/index.js";
 import genDiff from "../src/parsers.js";
 
 const file1 = "file1.json";
