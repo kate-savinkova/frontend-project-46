@@ -19,7 +19,7 @@ const sign = {
     unchanged: ' ',
 };
 
-const makeStylish = (diff, replacer = '  ') => {
+const makeStylish = (diff, replacer = '    ') => {
     const iter = (tree, depth) => tree.map((node) => {
         const indent = replacer.repeat(depth);
         const indentForSign = indent.slice(2);
