@@ -1,13 +1,31 @@
-import { compareFiles, getFixturePath, convertFile } from "./index.js";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import path from "path";
+import yaml from "js-yaml";
 
-const genDiff = (filepath1, filepath2) => {
-    const right1 = getFixturePath(filepath1);
-    const right2 = getFixturePath(filepath2);
-    const data1 = convertFile(right1);
-    const data2 = convertFile(right2);
-
-    const res = compareFiles(data1, data2, 0);
-    return res;
+const getFixturePath = (filename) => {
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+    return path.join(__dirname, "..", "__fixtures__", filename);
 };
 
-export default genDiff;
+const convertFile = (file) => {
+    const ext = path.extname(file);
+    switch (ext) {
+        case '.json':
+            return JSON.parse(readFileSync(file, "utf-8"));
+        case '.yml':
+        case '.yaml':
+            return yaml.load(readFileSync(file, "utf8"));
+        default:
+            throw new Error(`Invalid file extension: '${ext}'! Try supported formats.`);
+    }
+};
+
+const parse = (filepath) => {
+    const rightPath = getFixturePath(filepath);
+    const fileData = convertFile(rightPath);
+
+    return fileData;
+};
+
+export default parse;

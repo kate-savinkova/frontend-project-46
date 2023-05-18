@@ -1,22 +1,59 @@
-import genDiff from "../src/parsers.js";
+import genDiff from "../src/index.js";
 
 const file1 = "file1.json";
 const file2 = "file2.json";
 const f1 = "f1.yml";
 const f2 = "f2.yml";
-const res = `{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
+
+const nested = `{
+    common: {
+      + follow: false
+        setting1: Value 1
+      - setting2: 200
+      - setting3: true
+      + setting3: null
+      + setting4: blah blah
+      + setting5: {
+            key5: value5
+        }
+        setting6: {
+            doge: {
+              - wow:
+              + wow: so much
+            }
+            key: value
+          + ops: vops
+        }
+    }
+    group1: {
+      - baz: bas
+      + baz: bars
+        foo: bar
+      - nest: {
+            key: value
+        }
+      + nest: str
+    }
+  - group2: {
+        abc: 12345
+        deep: {
+            id: 45
+        }
+    }
+  + group3: {
+        deep: {
+            id: {
+                number: 45
+            }
+        }
+        fee: 100500
+    }
 }`;
 
 test("json files", () => {
-  expect(genDiff(file1, file2)).toEqual(res);
+  expect(genDiff(file1, file2)).toEqual(nested);
 });
 
 test("yml files", () => {
-  expect(genDiff(f1, f2)).toEqual(res);
+  expect(genDiff(f1, f2)).toEqual(nested);
 });
