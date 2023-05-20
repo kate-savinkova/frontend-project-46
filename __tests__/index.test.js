@@ -2,10 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import genDiff from '../src/index.js';
 
-const file1 = "file1.json";
-const file2 = "file2.json";
-const f1 = "f1.yml";
-const f2 = "f2.yml";
+const inputFormats = ['json', 'yml'];
 
 const getPath = (filename, format) => (
   path.join('.', '__fixtures__', `${filename}.${format}`)
@@ -21,18 +18,19 @@ beforeAll(() => {
   };
 });
 
-test("stylish test", () => {
-  expect(genDiff(file1, file2, 'stylish')).toEqual(output.stylish);
-  expect(genDiff(f1, f2, 'stylish')).toEqual(output.stylish);
-});
+describe.each(inputFormats)('gendiff for %p files', (format) => {
+  const f1 = `f1.${format}`;
+  const f2 = `f2.${format}`;
 
-test("plain test", () => {
-  expect(genDiff(file1, file2, 'plain')).toEqual(output.plain);
-  expect(genDiff(f1, f2, 'plain')).toEqual(output.plain);
-});
+  test('formatter [stylish]', () => {
+    expect(genDiff(f1, f2, 'stylish')).toBe(output.stylish);
+  });
 
-test("json test", () => {
-  expect(genDiff(file1, file2, 'json')).toEqual(output.json);
-  expect(genDiff(f1, f2, 'json')).toEqual(output.json);
-});
+  test('formatter [plain]', () => {
+    expect(genDiff(f1, f2, 'plain')).toBe(output.plain);
+  });
 
+  test('formatter [json]', () => {
+    expect(genDiff(f1, f2, 'json')).toBe(output.json);
+  });
+});
