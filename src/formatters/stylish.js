@@ -31,7 +31,7 @@ const makeStylish = (diff, replacer = '    ') => {
                 return makeLine(node.value, sign.added);
             case 'deleted':
                 return makeLine(node.value, sign.deleted);
-            case 'notChanged':
+            case 'unchanged':
                 return makeLine(node.value, sign.unchanged);
             case 'changed':
                 return [`${makeLine(node.value1, sign.deleted)}`, `${makeLine(node.value2, sign.added)}`].join('\n');

@@ -21,7 +21,7 @@ const buildTree = (file1, file2) => {
             };
         }
 
-        return { key, state: 'notChanged', value: file1[key] };
+        return { key, state: 'unchanged', value: file1[key] };
     });
 };
 

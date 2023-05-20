@@ -9,3 +9,6 @@ Comparison of flat files
 
 Recursive comparison
 [![asciicast](https://asciinema.org/a/OuqdLZhZCGiQagqJ1EVuV8p1M.svg)](https://asciinema.org/a/OuqdLZhZCGiQagqJ1EVuV8p1M)
+
+Use of plain and stylish formatting
+[![asciicast](https://asciinema.org/a/hDRhtAUUSBbpXOXbk3JIkH1h4.svg)](https://asciinema.org/a/hDRhtAUUSBbpXOXbk3JIkH1h4)

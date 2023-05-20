@@ -5,7 +5,7 @@ const file2 = "file2.json";
 const f1 = "f1.yml";
 const f2 = "f2.yml";
 
-const nested = `{
+const stylish = `{
     common: {
       + follow: false
         setting1: Value 1
@@ -50,10 +50,24 @@ const nested = `{
     }
 }`;
 
-test("json files", () => {
-  expect(genDiff(file1, file2)).toEqual(nested);
+const plain = "Property 'common.follow' was added with value: false\n" +
+  "Property 'common.setting2' was removed\n" +
+  "Property 'common.setting3' was updated. From true to null\n" +
+  "Property 'common.setting4' was added with value: 'blah blah'\n" +
+  "Property 'common.setting5' was added with value: [complex value]\n" +
+  "Property 'common.setting6.doge.wow' was updated. From '' to 'so much'\n" +
+  "Property 'common.setting6.ops' was added with value: 'vops'\n" +
+  "Property 'group1.baz' was updated. From 'bas' to 'bars'\n" +
+  "Property 'group1.nest' was updated. From [complex value] to 'str'\n" +
+  "Property 'group2' was removed\n" +
+  "Property 'group3' was added with value: [complex value]";
+
+test("stylish test", () => {
+  expect(genDiff(file1, file2, 'stylish')).toEqual(stylish);
+  expect(genDiff(f1, f2, 'stylish')).toEqual(stylish);
 });
 
-test("yml files", () => {
-  expect(genDiff(f1, f2)).toEqual(nested);
+test("plain test", () => {
+  expect(genDiff(file1, file2, 'plain')).toEqual(plain);
+  expect(genDiff(f1, f2, 'plain')).toEqual(plain);
 });
