@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { readFileSync } from "fs";
 import path from 'path';
 import genDiff from '../src/index.js';
 
@@ -12,9 +12,9 @@ let output;
 
 beforeAll(() => {
   output = {
-    stylish: fs.readFileSync(getPath('result-stylish-output', 'txt'), 'utf-8'),
-    plain: fs.readFileSync(getPath('result-plain-output', 'txt'), 'utf-8'),
-    json: fs.readFileSync(getPath('result-json-output', 'txt'), 'utf-8'),
+    stylish: readFileSync(getPath('result-stylish-output', 'txt'), 'utf-8'),
+    plain: readFileSync(getPath('result-plain-output', 'txt'), 'utf-8'),
+    json: readFileSync(getPath('result-json-output', 'txt'), 'utf-8'),
   };
 });
 

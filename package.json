@@ -1,12 +1,15 @@
 {
-  "name": "@hexlet/code",
+  "name": "frontend-project-lvl2",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/kate-savinkova/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/kate-savinkova/frontend-project-46/actions)",
-  "main": "index.js",
+  "description": "Gendiff is a CLI utility to compare two files",
+  "main": "src/index.js",
   "type": "module",
-  "transform": {},
   "scripts": {
-    "test": "npx jest"
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -27,7 +30,12 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5",
     "@jest/globals": "^29.5.0",
+    "babel-jest": "^29.5.0",
     "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",

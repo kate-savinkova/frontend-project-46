@@ -1,6 +1,6 @@
 import buildTree from "./buildTree.js";
 import formatData from "./formatters/index.js";
-import parse from "./parsers.js"
+import parse from "./parsers.js";
 
 const genDiff = (filePath1, filePath2, format) => {
   const data1 = parse(filePath1);
