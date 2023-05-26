@@ -1,5 +1,5 @@
 {
-  "name": "frontend-project-lvl2",
+  "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Gendiff is a CLI utility to compare two files",
   "main": "src/index.js",
