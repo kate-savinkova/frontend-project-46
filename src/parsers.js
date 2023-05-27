@@ -5,7 +5,7 @@ import yaml from "js-yaml";
 
 const getFixturePath = (filename) => {
     const __dirname = path.dirname(fileURLToPath(import.meta.url));
-    return path.join(__dirname, "..", "__fixtures__", filename);
+    return path.resolve(__dirname, "..", "__fixtures__", filename);
 };
 
 const convertFile = (file) => {
