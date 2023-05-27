@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Gendiff is a CLI utility to compare two files",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --no-warnings"
