@@ -24,6 +24,12 @@
     "url": "https://github.com/kate-savinkova/frontend-project-46/issues"
   },
   "homepage": "https://github.com/kate-savinkova/frontend-project-46#readme",
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "printWidth": 100000
+  },
   "dependencies": {
     "@jest/globals": "^29.5.0",
     "commander": "^10.0.0",
