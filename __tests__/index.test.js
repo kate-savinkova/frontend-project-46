@@ -6,7 +6,7 @@ const inputFormats = ['json', 'yml'];
 
 const getPath = (filename, format) => path.resolve('.', '__fixtures__', `${filename}.${format}`);
 
-let output;
+var output;
 
 beforeAll(() => {
   output = {
