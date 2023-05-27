@@ -37,7 +37,7 @@ const iter = (tree, previousKeys) => tree.map((node) => {
 });
 
 const makePlain = (diff) => {
-    const plainDiff = iter(diff, '').join('\n');
+    const plainDiff = iter(diff, '').join('\n').trimEnd();
     return plainDiff;
 };
 
