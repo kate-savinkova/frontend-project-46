@@ -14,7 +14,6 @@ const convertFile = (file) => {
         case '.json':
             return JSON.parse(readFileSync(file, "utf-8"));
         case '.yml':
-            return yaml.load(readFileSync(file, "utf8"));
         case '.yaml':
             return yaml.load(readFileSync(file, "utf8"));
         default:

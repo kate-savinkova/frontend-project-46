@@ -5,7 +5,8 @@ import genDiff from '../src/index.js';
 const inputFormats = ['json', 'yml'];
 
 const getPath = (filename, format) => (
-  path.join('.', '__fixtures__', `${filename}.${format}`)
+  path.resolve('.', '__fixtures__', `${filename}.${format}`)
+  //path.join('.', '__fixtures__', `${filename}.${format}`)
 );
 
 let output;
