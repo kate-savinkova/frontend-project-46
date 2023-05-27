@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 const stringify = (data) => {
     if (!_.isObject(data)) {
-        if (typeof (data) === "boolean" || data === null) {
+        if (typeof (data) === "boolean" || data === null || typeof (data) === "number") {
             return `${data}`.trimEnd();
         }
         return `'${data}'`.trimEnd();
