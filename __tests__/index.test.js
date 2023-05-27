@@ -12,14 +12,6 @@ const output = {
   json: readFileSync(getPath('result-json-output', 'txt'), 'utf-8'),
 };
 
-/*beforeAll(() => {
-  output = {
-    stylish: readFileSync(getPath('result-stylish-output', 'txt'), 'utf-8'),
-    plain: readFileSync(getPath('result-plain-output', 'txt'), 'utf-8'),
-    json: readFileSync(getPath('result-json-output', 'txt'), 'utf-8'),
-  };
-});*/
-
 describe.each(inputFormats)('gendiff for %p files', (format) => {
   const f1 = `f1.${format}`;
   const f2 = `f2.${format}`;
