@@ -1,5 +1,4 @@
-import { describe, expect, test } from '@jest/globals';
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 import path from 'path';
 import genDiff from '../src/index.js';
 
